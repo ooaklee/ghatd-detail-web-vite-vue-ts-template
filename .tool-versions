@@ -1,0 +1,5 @@
+# asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+nodejs 21.7.3
+
+# asdf plugin-add yarn
+yarn 1.22.18

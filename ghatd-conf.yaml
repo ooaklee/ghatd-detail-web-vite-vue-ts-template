@@ -1,0 +1,10 @@
+version: detail/v0alpha1
+type: web-vite
+name: "vite-vue-ts-template"
+description: |
+  A vite based vue template that has been set up to be able
+  to work with the GHAT(D) set up.
+experimental: true
+features:
+  - vue
+  - vite

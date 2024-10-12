@@ -1,0 +1,30 @@
+{
+  "name": "template-vite-vue-ts-tailwind-v3",
+  "version": "0.0.0",
+  "private": "true",
+  "scripts": {
+    "dev": "cd ./web && vite",
+    "build": "cd ./web && vue-tsc --noEmit && vite build",
+    "preview": "cd ./web && vite preview",
+    "go:main:build-arm64": "yarn run build && export BINARY_NAME=ghatd && CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -a -installsuffix cgo -ldflags='-w -s' -o ./${BINARY_NAME}-arm64 main.go",
+    "go:main:build-amd64": "yarn run build && export BINARY_NAME=ghatd && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags='-w -s' -o ./${BINARY_NAME}-amd64 main.go",
+    "go:main:start": "go run main.go start-server",
+    "go:web:build-arm64": "yarn run build && export BINARY_NAME=ghatd && CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -a -installsuffix cgo -ldflags='-w -s' -o ./${BINARY_NAME}-arm64 web.go",
+    "go:web:build-amd64": "yarn run build && export BINARY_NAME=ghatd && CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -ldflags='-w -s' -o ./${BINARY_NAME}-amd64 web.go",
+    "go:web:start": "go run web.go"
+  },
+  "dependencies": {
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.22.10",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "daisyui": "^4.12.13",
+    "prettier": "^3.0.2",
+    "prettier-plugin-tailwindcss": "^0.5.3",
+    "typescript": "^5.1.6",
+    "vitawind": "^2.2.4",
+    "vite": "^4.4.9",
+    "vue-tsc": "^2.1.6"
+  }
+}
